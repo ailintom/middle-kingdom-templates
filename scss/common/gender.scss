@@ -1,0 +1,15 @@
+.gender {
+  background: $text-color-light;
+  border-radius: $br;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  min-width: g();
+  padding: 0 g(1/8);
+  text-align: center;
+  text-shadow: 0 -1px $shade;
+
+  + span {
+    margin-left: .25em;
+  }
+}

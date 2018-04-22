@@ -1,0 +1,28 @@
+@mixin input {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid tint(#000, 75); // IE
+  border-bottom: 2px solid $shade-strong;
+  height: g(1.5); // Fix divergent input and select heights
+  margin: 0;
+  min-width: g(8);
+  padding: g(1/4) 2px (g(1/4) - 2px);
+  transition: background .2s ease-in, border .2s;
+  width: auto;
+
+  @media (max-width: $break-small) {
+    margin-bottom: g(1/4);
+  }
+
+  &:focus {
+    background: $blue-lighter; // IE
+    background: $shade-blue;
+    border-color: $blue;
+    outline: 0;
+  }
+
+  .column &:first-of-type {
+    margin: g(-1/4) 0 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+.biblio {
+  list-style: none;
+  padding: 0;
+}
+
+.biblio_item {
+  margin: 0 0 g(1/2) g(1);
+  text-indent: g(-1);
+
+  &:before {
+    content: none;
+  }
+
+  a {
+    border-color: transparent;
+
+    @include hover {
+      border-color: $blue-dark;
+    }
+  }
+}

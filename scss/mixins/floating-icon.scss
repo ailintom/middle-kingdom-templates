@@ -1,0 +1,33 @@
+@mixin floating-icon($position: left) {
+  position: relative;
+
+  @if $position == left {
+    padding-left: g(15/8);
+  } @else if $position == right {
+    padding-right: g(15/8);
+  } @else {
+    @error "Invalid position: #{$position}";
+  }
+
+  > .icon {
+    background: url(diagonal-light.png);
+    float: left;
+    height: 100%;
+    padding: (g(1/4) - 1px) g(1/4) (g(1/4) + 1px);
+    position: absolute;
+    top: 0;
+    width: g(1.5);
+
+    @if $position == left {
+      box-shadow: -1px 0 $shade inset, 1px 0 $shine-weak;
+      left: 0;
+    } @else if $position == right {
+      box-shadow: -1px 0 $shade, 1px 0 $shine-weak inset;
+      right: 0;
+    }
+
+    + .icon {
+      display: none;
+    }
+  }
+}

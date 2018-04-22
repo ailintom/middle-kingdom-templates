@@ -1,0 +1,27 @@
+.name-box {
+  margin: 0 0 g(1/2);
+  min-width: 0;
+
+  td {
+    padding: 0 g(1/4) 0 0;
+    vertical-align: bottom;
+  }
+
+  th {
+    border: 0;
+    font-size: $font-size-small;
+    font-weight: normal;
+    line-height: g(1/2);
+    padding: 0 g(1/4) g(1/4) 0;
+  }
+
+  td + td,
+  th + th {
+    border-left: 1px solid $border-color;
+    padding-left: g(1/4);
+  }
+
+  tr {
+    border: 0;
+  }
+}

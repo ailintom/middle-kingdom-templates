@@ -1,0 +1,69 @@
+.filter {
+  @include clearfix;
+  background: #fff;
+  border-radius: $br;
+  box-shadow: 0 0 0 1px $shade inset;
+  display: none;
+  margin: 0 0 g(1/2);
+  table-layout: fixed;
+  width: 100%;
+
+  &.-active {
+    display: table;
+  }
+}
+
+.filter_block {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: g();
+  }
+}
+
+.filter_content {
+  display: table-cell;
+  padding: g(1/4) g(1/2);
+  position: relative;
+  transition: opacity .2s;
+  vertical-align: top;
+  width: 100%;
+
+  @media (max-width: $break-medium) {
+    display: block;
+  }
+
+  [type=radio] + label {
+    margin-top: g(1/4);
+  }
+}
+
+.filter_label {
+  background: $shade-weak;
+  border-radius: $br 0 0 $br;
+  box-shadow: -1px 0 $shade inset, 1px 0 $shine-weak;
+  display: table-cell;
+  padding: g(1/2);
+  vertical-align: top;
+  width: 14em; // Fitting "Ward/Fischer number" without break
+
+  @media (max-width: $break-medium) {
+    border-radius: $br $br 0 0;
+    box-shadow: 0 -1px $shade inset, 0 1px $shine-weak;
+    display: block;
+    width: 100%;
+  }
+}
+
+.filter_remove {
+  @include button-small-ghost;
+  float: left;
+  font-size: g(3/4);
+  margin: g(-1/4) g(1/2) g(-1/4) g(-1/4);
+  padding-left: g(1/4);
+  padding-right: g(1/4);
+
+  &:active {
+    margin-top: (g(-1/4) + 1px);
+  }
+}

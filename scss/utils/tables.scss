@@ -1,0 +1,90 @@
+table {
+  min-width: $form-width;
+
+  @media (max-width: $break-large) {
+    min-width: 100%;
+  }
+
+  @media print {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+tr {
+  border-bottom: 1px solid $border-color;
+
+  &.-no-border {
+    border: 0;
+  }
+
+  &[role=link] {
+    color: $blue;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+
+    @include hover {
+      background: $blue-lighter; // IE
+      background: $shade-blue;
+      color: $blue-dark;
+    }
+  }
+}
+
+td {
+  padding: g(1/4);
+  vertical-align: top;
+
+  &.-border {
+    border-left: 1px solid $border-color;
+  }
+
+  &.-highlight {
+    background: $shade-gold;
+    box-shadow: 1px 0 $shade-weak inset, -1px 0 $shade-weak inset;
+  }
+}
+
+th {
+  border-bottom: 2px solid;
+  border-radius: $br $br 0 0;
+  color: $text-color-light;
+  padding: g(1/4);
+  vertical-align: bottom;
+  white-space: nowrap;
+
+  &.-border {
+    border-left: 1px solid $border-color;
+  }
+
+  .-no-border > & {
+    border-bottom: 0;
+  }
+
+  &.-highlight {
+    background: $gold-muted; // IE
+    background: $shade-gold;
+    box-shadow: 0 0 0 1px $shade-weak inset, 0 -1px #fff inset;
+    color: $text-color;
+    position: relative;
+  }
+
+  > a {
+    border: 0;
+    color: inherit;
+    display: block;
+    margin: g(-1/4);
+    padding: g(1/4) g(1.25) g(1/4) g(1/4);
+    transition: background .2s, color .2s;
+
+    @include hover {
+      background: $shade-blue;
+    }
+
+    > .icon {
+      bottom: g(1/4);
+      position: absolute;
+      right: 0;
+    }
+  }
+}

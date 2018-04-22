@@ -1,0 +1,31 @@
+
+.fx-triangle {
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+
+  &:after {
+    animation: triangle-grow .5s normal forwards;
+    border-color: transparent transparent $shade-weak;
+    border-style: solid;
+    border-width: 0 g() g(1.25) g();
+    content: '';
+    display: block;
+    height: 0;
+    left: g(-1);
+    position: relative;
+    top: g(-5/8);
+    width: 0;
+  }
+
+  .old-ie & {
+    display: none;
+  }
+}
+
+@keyframes triangle-grow {
+  to {
+    opacity: 0;
+    transform: scale(12);
+  }
+}

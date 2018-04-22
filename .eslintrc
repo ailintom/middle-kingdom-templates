@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true
+  },
+  "root": true,
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "extends": "standard"
+}

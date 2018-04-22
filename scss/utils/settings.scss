@@ -1,0 +1,42 @@
+// Base colors
+$gold: #a88338;
+$blue: adjust-hue($gold, 180);
+
+$text-color: #383838;
+$text-color-light: tint($text-color, 25);
+
+// Base variants
+$gold-muted: tint(desaturate($gold, 25), 100 * 15/16);
+$blue-light: tint($blue, 25);
+$blue-lighter: tint($blue, 100 * 15/16);
+$blue-dark: shade($blue, 25);
+
+// Shades & shines
+$shade: rgba(#000, 1/8);
+$shade-weak: rgba(#000, 1/16);
+$shade-strong: rgba(#000, 1/4);
+
+$shade-gold: rgba($gold, 1/16);
+$shade-blue: rgba($blue, 1/16);
+
+$shine: rgba(#fff, 1/2);
+$shine-weak: rgba(#fff, 1/4);
+
+// Misc colors
+$border-color: #ddd;
+
+// Dimensions
+$g: 20px; // grid
+$br: 2px; // border radius
+
+$text-width: g(34);
+$form-width: g(40);
+
+$font-size: 14px;
+$font-size-small: 12px;
+$line-height: $g;
+
+// Breakpoints
+$break-large: 1023px;
+$break-medium: 719px;
+$break-small: 479px;

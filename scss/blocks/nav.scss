@@ -1,0 +1,151 @@
+.nav {
+  background: #fff;
+  border-right: 2px solid $gold;
+  float: left;
+  margin: g() 0 g() g();
+  min-width: g(9);
+
+  &.-sticky {
+    position: sticky;
+    top: g();
+
+    @media (max-width: $break-large) {
+      position: static;
+    }
+  }
+
+  @media (max-width: $break-large) {
+    background: $gold-muted;
+    border-radius: $br 0 0 $br;
+    box-shadow: 0 0 0 1px $shade-weak inset;
+    display: none;
+    float: none;
+    margin: g(1/2) g(1/2) 0;
+
+    &.-open {
+      display: block;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.nav_list {
+  @include clearfix;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &.-aside {
+    margin-top: g();
+
+    @media (max-width: $break-large) {
+      margin: 0;
+    }
+  }
+}
+
+.nav_item {
+  display: block;
+  margin: 0;
+  position: relative;
+
+  @media (max-width: $break-large) {
+    box-shadow: 0 -1px $shade-weak inset, 0 1px $shine-weak;
+  }
+
+  &:before {
+    content: none;
+  }
+
+  &.-active {
+    &:after {
+      border-color: transparent $gold transparent transparent;
+      border-style: solid;
+      border-width: g(1/3) g(1/3) g(1/3) 0;
+      content: '';
+      display: block;
+      height: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: g(2/3);
+      width: 0;
+    }
+  }
+}
+
+.nav_link {
+  border: 0;
+  border-right: 2px solid transparent;
+  box-shadow: 0 0 0 1px transparent inset;
+  color: $text-color;
+  display: block;
+  margin: 0 -2px 0 0;
+  padding: g(1/2);
+  position: relative;
+  transition: background .2s, border .2s, box-shadow .2s, color .2s;
+
+  @include hover {
+    background: $gold-muted;
+    border-color: mix(#000, $gold);
+    border-radius: $br 0 0 $br;
+    box-shadow: 0 0 0 1px $shade-weak inset;
+    color: #000;
+
+    @media (max-width: $break-large) {
+      background: $shade-weak;
+    }
+  }
+
+  &.-no-icon {
+    padding-left: g(2.5);
+  }
+
+  .nav_item.-active & {
+    color: $gold;
+    font-weight: bold;
+
+    @include hover {
+      border-color: $gold;
+      color: $gold;
+    }
+
+    &:after {
+      border-color: transparent #fff transparent transparent;
+      border-style: solid;
+      border-width: g(1/3) g(1/3) g(1/3) 0;
+      content: '';
+      display: block;
+      height: 0;
+      position: absolute;
+      right: -2.5px;
+      top: g(2/3);
+      width: 0;
+      z-index: 1;
+    }
+  }
+
+  > .icon {
+    fill: $text-color-light;
+    float: left;
+    height: g(1.5);
+    margin: -4px g(3/4) 0 -4px; // Align vertically with text
+    width: g(1.5);
+  }
+
+  @include hover {
+    > .icon {
+      fill: currentColor;
+    }
+  }
+
+  .nav_item.-active & > .icon {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: .25px;
+  }
+}

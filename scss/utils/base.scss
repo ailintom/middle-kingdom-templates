@@ -1,0 +1,191 @@
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  border-bottom: g(1/4) solid $gold;
+  border-top: g(1/4) solid $gold;
+  color: $text-color;
+  display: table;
+  font: #{$font-size}/#{g()} Roboto, sans-serif;
+  height: 100%;
+  table-layout: fixed;
+  width: 100%;
+
+  @media print {
+    border: 0;
+  }
+}
+
+a {
+  border-bottom: 2px solid $shade;
+  color: $blue;
+  transition: border .2s, color .2s;
+
+  @include hover {
+    border-color: currentColor;
+    color: $blue-dark;
+    text-decoration: none;
+  }
+
+  @media print {
+    border: 0;
+  }
+}
+
+button {
+  @include button;
+}
+
+dd {
+  margin: 0;
+  overflow: hidden;
+  padding: 0 0 g(1/2) g(1/4); // NOTE: Using padding instead of margin so link border is not cut
+
+  @media (max-width: $break-small) {
+    overflow: visible;
+    padding-left: 0;
+  }
+
+  dl.-inline & {
+    display: inline;
+    padding: 0;
+
+    + dt:before {
+      content: '/ ';
+    }
+  }
+}
+
+dl {
+  margin: 0 0 g(1/2);
+}
+
+dt {
+  clear: left;
+  color: $text-color-light;
+  float: left;
+  margin: 0 0 g(1/2);
+  min-width: g(5);
+
+  @media (max-width: $break-small) {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  dl.-free & {
+    color: $text-color;
+    font-weight: normal;
+    width: auto;
+  }
+
+  dl.-inline & {
+    display: inline;
+    float: none;
+    margin: 0;
+    min-width: 0;
+  }
+}
+
+h1 {
+  color: $gold;
+  font-size: g();
+  font-weight: normal;
+  margin: 0 0 g();
+}
+
+h2 {
+  color: $gold;
+  font-size: round(g(3/4) * .9);
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: g() 0 g(1/2);
+  text-transform: uppercase;
+  word-spacing: .1em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h3 {
+  font-size: g(4/5);
+  font-weight: normal;
+  margin: g() 0 g(1/2);
+
+  h2 + &,
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h4,
+h5,
+h6 {
+  color: $text-color;
+  font-size: $font-size;
+  font-weight: bold;
+  margin: g() 0 g(1/2);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+hr {
+  background: $border-color;
+  border: 0;
+  height: 1px;
+  margin: g() 0 (g() - 1px);
+}
+
+p {
+  margin: 0 0 g(1/2);
+}
+
+ol,
+ul {
+  margin: 0 0 g(1/2);
+  padding: 0 0 0 g(1.25);
+}
+
+ol {
+  counter-reset: li;
+  list-style: none;
+
+  li {
+    counter-increment: li;
+
+    &:before {
+      color: $gold;
+      content: counter(li);
+      direction: rtl;
+      display: inline-block;
+      font-weight: bold;
+      margin-left: g(-1.5);
+      position: absolute;
+      text-align: right;
+      width: g();
+    }
+  }
+}
+
+ul {
+  list-style: none;
+
+  li:before {
+    background: $gold;
+    border-radius: $br;
+    content: '';
+    height: g(1/4);
+    margin: g(3/8) 0 0 g(-5/8);
+    position: absolute;
+    width: g(1/4);
+  }
+
+  h3:first-child {
+    margin-top: g(1/2);
+  }
+}

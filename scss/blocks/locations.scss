@@ -1,0 +1,11 @@
+.locations {
+  padding: 0;
+
+  > li:before {
+    content: none;
+  }
+
+  ul {
+    margin-bottom: g(1/2);
+  }
+}

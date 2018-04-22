@@ -1,0 +1,21 @@
+.spellings {
+  counter-reset: spelling;
+}
+
+.spellings_item {
+  margin: 0 0 g();
+
+  img {
+    max-height: 1.75em;
+    vertical-align: baseline;
+  }
+
+  li {
+    counter-increment: spelling;
+    margin: 0 0 g(1/2);
+
+    &:before {
+      content: counter(spelling);
+    }
+  }
+}

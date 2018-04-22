@@ -1,0 +1,21 @@
+.info-box {
+  @include floating-icon;
+  background: $gold-muted;
+  border-radius: $br;
+  box-shadow: 0 0 0 1px $shade-weak inset;
+  margin: 0 0 g(1/2);
+  max-width: $form-width;
+  overflow: hidden;
+  padding: g(1/2) g(1/2) g(1/2) g(2.5);
+  position: relative;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  > .icon {
+    color: $text-color-light;
+    padding: g(1/2);
+    width: g(2);
+  }
+}

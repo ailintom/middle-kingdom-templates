@@ -1,0 +1,76 @@
+@mixin button {
+  background: $blue;
+  border: 0;
+  border-radius: $br;
+  box-shadow: 0 -2px $shade-strong inset, 0 0 0 1px $shine;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0;
+  min-height: g(1.5);
+  min-width: g(5);
+  overflow: hidden;
+  padding: (g(1/2) - 1px) g() (g(1/2) + 1px);
+  text-shadow: 0 -1px $shade, 0 0 1em $blue;
+  transition: background .2s, color .2s;
+
+  @include hover {
+    background: $blue-light;
+    border: 0;
+    border-radius: $br;
+    color: #fff;
+  }
+
+  &:active {
+    box-shadow: 0 -1px $shade-strong inset, 0 0 0 1px $shine;
+    margin-top: 1px;
+    min-height: (g(1.5) - 1px);
+    padding-bottom: g(1/2);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+@mixin button-ghost {
+  @include button;
+  @include button-ghost-mod;
+}
+
+@mixin button-ghost-mod {
+  background: #fff;
+  box-shadow: 0 -2px $shade inset, 0 0 0 1px $shade-weak;
+  color: $text-color-light;
+  text-shadow: 0 1px $shine, 0 0 1em #fff;
+
+  @include hover {
+    background: shade(#fff, 5);
+    color: $text-color;
+  }
+
+  &:active {
+    box-shadow: 0 -1px $shade inset, 0 0 0 1px $shade-weak;
+  }
+}
+
+@mixin button-small {
+  @include button;
+  @include button-small-mod;
+}
+
+@mixin button-small-mod {
+  min-width: g(1.5);
+  padding: (g(1/4) - 1px) g(3/8) (g(1/4) + 1px);
+
+  &:active {
+    padding-bottom: g(1/4);
+  }
+}
+
+@mixin button-small-ghost {
+  @include button;
+  @include button-small-mod;
+  @include button-ghost-mod;
+}

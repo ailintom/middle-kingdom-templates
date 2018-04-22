@@ -1,0 +1,37 @@
+.cards {
+  @include clearfix;
+  margin: 0 g(-1/4);
+}
+
+.cards_link {
+  @include button-ghost;
+  @include floating-icon;
+  background: $gold-muted;
+  float: left;
+  margin: 0 g(1/4) g(1/2);
+  padding: (g(3/4) - 1px) g() (g(3/4) + 1px) g(3.25);
+  transition: background .2s, color .2s;
+  width: g(12.33333); // IE
+  width: calc(33.33333% - #{g(1/2)});
+
+  @media (max-width: $break-medium) {
+    width: calc(50% - #{g(1/2)});
+  }
+
+  @media (max-width: $break-small) {
+    width: calc(100% - #{g(1/2)});
+  }
+
+  @include hover {
+    background: shade($gold-muted, 6.25);
+  }
+
+  &:active {
+    padding-bottom: g(3/4);
+  }
+
+  > .icon {
+    padding: (g(1/2) - 1px) g(1/2) (g(1/2) + 1px);
+    width: g(2.5);
+  }
+}

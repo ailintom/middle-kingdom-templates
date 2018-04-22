@@ -1,0 +1,36 @@
+.pagination {
+  @include clearfix;
+  margin: 0;
+
+  @media print {
+    display: none;
+  }
+}
+
+.pagination_link {
+  @include button-small;
+  float: left;
+  margin: 0 g(1/2) g(1/2) 0;
+  position: relative;
+
+  @media (max-width: $break-small) {
+    &:nth-child(2) {
+      float: right;
+      margin-right: 0;
+    }
+
+    &:nth-child(3) {
+      clear: left;
+      float: right;
+      margin-right: 0;
+    }
+  }
+
+  &.-next {
+    @include floating-icon(right);
+  }
+
+  &.-previous {
+    @include floating-icon;
+  }
+}

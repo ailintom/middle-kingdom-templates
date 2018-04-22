@@ -1,0 +1,62 @@
+.main {
+  display: table-row;
+  height: 100%;
+}
+
+.main_content {
+  overflow: hidden;
+  padding: g();
+
+  @media (max-width: $break-large) {
+    padding: g() g(1/2);
+  }
+
+  @media print {
+    padding: 0;
+  }
+
+  &.-centered {
+    float: none;
+    margin: 0 auto;
+    max-width: $text-width + g(2);
+
+    @media (max-width: $break-large) {
+      max-width: $text-width + g();
+    }
+  }
+}
+
+.main_parent-link {
+  @include button-small-ghost;
+  background: $gold-muted;
+  color: shade($text-color-light, 25);
+  float: right;
+  margin: g(-1/4) 0 g(1/2) g(1/2);
+  min-width: g(8);
+  text-align: center;
+
+  @include hover {
+    background: shade($gold-muted, 6.25);
+  }
+
+  @media (max-width: $break-medium) {
+    min-width: 0;
+  }
+
+  @media (max-width: $break-small) {
+    float: none;
+    margin: g(-1/2) 0 g(1/2);
+  }
+
+  @media print {
+    display: none;
+  }
+
+  &:active {
+    margin-top: (g(-1/4) + 1px);
+
+    @media (max-width: $break-small) {
+      margin-top: (g(-1/2) + 1px);
+    }
+  }
+}

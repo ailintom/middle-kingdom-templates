@@ -1,0 +1,9 @@
+.link-list {
+  a {
+    border-color: transparent;
+
+    @include hover {
+      border-color: $blue;
+    }
+  }
+}

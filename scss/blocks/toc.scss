@@ -1,0 +1,44 @@
+.toc {
+  border-radius: $br;
+  box-shadow: 0 0 0 2px $shade inset;
+  float: right;
+  margin: 0 0 g() g();
+  min-width: g(8);
+  padding: g(1/2);
+
+  @media (max-width: $break-medium) {
+    float: none;
+    margin-left: 0;
+  }
+
+  @media print {
+    display: none;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.toc_list {
+  list-style: none;
+  padding: 0;
+
+  img {
+    display: inline-block;
+    max-height: 1.75em;
+    vertical-align: baseline;
+  }
+
+  > li {
+    margin: 0 0 g(1/2);
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:before {
+      content: none;
+    }
+  }
+}

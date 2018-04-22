@@ -1,0 +1,29 @@
+/*!
+ * Theme for Persons and Names of the Middle Kingdom
+ * (c) 2018 Aspectis <info@aspectis.net>
+ * MIT License
+ */
+
+@import '../node_modules/bootstrap/scss/mixins/clearfix';
+@import '../node_modules/bootstrap/scss/mixins/screen-reader';
+
+@import 'functions/*';
+
+@import 'utils/settings';
+
+@import 'mixins/*';
+
+@import '../node_modules/bootstrap/dist/css/bootstrap-reboot';
+
+@import 'utils/fonts';
+@import 'utils/base';
+@import 'utils/forms';
+@import 'utils/tables';
+
+@import 'blocks/*';
+
+@import 'common/*';
+
+@import 'utils/print';
+
+@import 'utils/old-ie';

@@ -1,0 +1,53 @@
+{
+  "name": "middle-kingdom-templates",
+  "version": "0.1.0",
+  "description": "Styles and templates for the Persons and Names of the Middle Kingdom database web frontend",
+  "author": "Aspectis <info@aspectis.net>",
+  "license": "MIT",
+  "private": true,
+  "repository": "https://github.com/aspectis/middle-kingdom-templates",
+  "devDependencies": {
+    "autoprefixer": "^8.3.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.7",
+    "cpy-cli": "^1.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.8.3",
+    "node-sass-globbing": "0.0.23",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "postcss-cli": "^5.0.0",
+    "postcss-csso": "^3.0.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^0.8.1",
+    "stylelint-scss": "^3.0.1",
+    "uglify-js": "^3.3.22"
+  },
+  "scripts": {
+    "assets": ". build/assets.sh",
+    "build": "run-s -s script-lint style-lint script-prod style-prod assets",
+    "dev": "run-p -s script-watch style-watch assets serve",
+    "script": ". build/script.sh",
+    "script-lint": ". build/script-lint.sh",
+    "script-prod": ". build/script-prod.sh",
+    "script-watch": "npm run script; onchange js -- npm run script",
+    "serve": ". build/serve.sh",
+    "style": ". build/style.sh",
+    "style-lint": ". build/style-lint.sh",
+    "style-prod": ". build/style-prod.sh",
+    "style-watch": "npm run style; onchange scss -- npm run style"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "classlist-polyfill": "^1.2.0",
+    "html5shiv": "^3.7.3"
+  }
+}
