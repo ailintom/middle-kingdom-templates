@@ -8,7 +8,11 @@ All parts that require examination when creating an application based on these t
 
 To run this project, a web server with at least PHP 5.6 (7.0 or higher recommended) is required.
 
-For development, [npm](https://www.npmjs.com/get-npm) must be installed locally. Install all dependencies by executing `npm i` in your preferred shell. Run `npm run build` to compile everything and serve the `www` directory.
+For development, [npm](https://www.npmjs.com/get-npm) must be installed locally. Install all dependencies by executing `npm i` in your preferred shell.
+
+> If you are on Windows, use `bash` for the build scripts with `npm config set script-shell "C:\\Program Files\\Git\\bin\\bash.exe"` (assuming [Git](https://git-scm.com/download/win) is already installed).
+
+Then run `npm run build` to compile everything and serve the `www` directory.
 
 ## Configuration
 
