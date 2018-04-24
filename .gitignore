@@ -6,5 +6,5 @@ npm-debug.log
 
 /*.sh
 /vendor/
-/www/assets/script/script.js
+/www/assets/script/*.js
 /www/assets/style/style.css
