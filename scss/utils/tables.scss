@@ -1,4 +1,5 @@
-table {
+.table {
+  display: table;
   min-width: $form-width;
 
   @media (max-width: $break-large) {
@@ -11,27 +12,29 @@ table {
   }
 }
 
-tr {
+.tr {
   border-bottom: 1px solid $border-color;
+  display: table-row;
 
   &.-no-border {
     border: 0;
   }
+}
 
-  &[role=link] {
-    color: $blue;
-    cursor: pointer;
-    transition: background .2s, color .2s;
+a.tr {
+  color: $blue;
+  cursor: pointer;
+  transition: background .2s, color .2s;
 
-    @include hover {
-      background: $blue-lighter; // IE
-      background: $shade-blue;
-      color: $blue-dark;
-    }
+  @include hover {
+    background: $blue-lighter; // IE
+    background: $shade-blue;
+    color: $blue-dark;
   }
 }
 
-td {
+.td {
+  display: table-cell;
   padding: g(1/4);
   vertical-align: top;
 
@@ -45,10 +48,12 @@ td {
   }
 }
 
-th {
+.th {
   border-bottom: 2px solid;
   border-radius: $br $br 0 0;
   color: $text-color-light;
+  display: table-cell;
+  font-weight: bold;
   padding: g(1/4);
   vertical-align: bottom;
   white-space: nowrap;

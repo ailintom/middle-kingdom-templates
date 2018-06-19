@@ -1,0 +1,7 @@
+.print_only {
+  display: none;
+
+  @media print {
+    display: inline;
+  }
+}

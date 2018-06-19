@@ -99,13 +99,13 @@ select {
   position: absolute;
 }
 
-[type=reset] {
+[value=reset] {
   @include button-ghost;
   float: right;
   margin-left: g(1/2);
 }
 
-[type=submit] {
+.submit {
   @include button;
 }
 

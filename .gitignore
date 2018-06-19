@@ -8,3 +8,4 @@ npm-debug.log
 /vendor/
 /www/assets/script/*.js
 /www/assets/style/style.css
+/nbproject/
